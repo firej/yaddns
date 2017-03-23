@@ -3,7 +3,8 @@
 import argparse
 import requests
 import json
-from pprint import pprint
+import os
+import sys
 
 
 class AuthError(Exception):
@@ -84,7 +85,7 @@ def write_ip_value(ip, hostname, record_id):
 
 
 def auth():
-    print('got to https://pddimp.yandex.ru/api2/admin/get_token')
+    print('go to https://pddimp.yandex.ru/api2/admin/get_token')
     print('and place token to .pddtoken')
 
 
@@ -125,4 +126,6 @@ if __name__ == '__main__':
     parser.add_argument("-a", "--auth", help="New authorization", action='store_true', required=False)
     parser.add_argument("--host", help="Hostname to set", type=str, required=True)
     args = parser.parse_args()
+    wdir = os.path.dirname(os.path.abspath(sys.argv[0]))
+    os.chdir(wdir)
     main(args)

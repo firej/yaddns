@@ -97,6 +97,11 @@ def get_my_ip():
     http://ipv4.icanhazip.com
     http://v4.ident.me
     http://checkip.amazonaws.com
+
+    ipv6:
+    http://ip.irc.pw
+    http://ipv6.icanhazip.com
+    http://v6.ident.me
     """
     return requests.get("http://ipinfo.io/ip").text.strip()
 

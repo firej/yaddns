@@ -71,7 +71,7 @@ def write_ip_value(ip, hostname, record_id):
     }
     post_data = {
         'domain': hostname.split('.', 1)[1],
-        'subdomain': hostname,
+        'fqdn': hostname,
         'record_id': record_id,
         'content': ip,
     }
